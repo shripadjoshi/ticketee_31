@@ -10,11 +10,11 @@ Feature: Creating Projects
     #    When I follow "New Project"
     ########################3
     
-    Scenario: Listing all the projects
+    Scenario: Displaying the project
         Given there is a project called "New Project 1"   
         And I am on the home page
         When I follow "New Project 1"
-        Then I should be on the project page for "New Project"
+        Then I should be on the project page for "New Project 1"
 
     Scenario: Creating a project
         Given I am on the home page
@@ -33,5 +33,23 @@ Feature: Creating Projects
         And I press "Create Project"
         Then I should see "Project has not been created."
         And I should see "Name can't be blank"
+
+    Scenario: Updating a project
+        Given there is a project called "New Project 2"
+        And I am on the home page
+        When I follow "New Project 2"
+        And I follow "Edit Project"
+        And I fill in "Name" with "New Project latest"
+        And I press "Update Project"
+        Then I should see "Project has been updated."
+        Then I should be on the project page for "New Project latest"
+
+     Scenario: Deleting a project
+        Given there is a project called "New Project 3"
+        And I am on the home page
+        When I follow "New Project 3"
+        And I follow "Delete"
+        Then I should see "Project has been deleted"
+        
 
     
