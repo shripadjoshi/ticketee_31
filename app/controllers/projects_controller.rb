@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   
   def index
-    
+    @projects = Project.all
   end
   
   def new
@@ -21,6 +21,10 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @project }
+    end
   end
 
 end

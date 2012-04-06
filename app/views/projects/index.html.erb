@@ -1,3 +1,8 @@
 <h1>Listing Projects</h1>
+<% @projects.each do |project| %>
+  <%= link_to project.name, project %>
+<% end %>
+<div class="clear"></div>
+<div class="clear"></div>
 <%= link_to "New Project", new_project_path %>
 
