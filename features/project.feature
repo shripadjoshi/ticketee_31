@@ -10,3 +10,6 @@ Feature: Creating Projects
         Then I fill in "Name" with "New Project"
         And I press "Create Project"
         Then I should see "Project has been created."
+        And I should be on the project page for "New Project"
+        And I should see "New Project - Projects - Ticketee"
+
