@@ -26,3 +26,7 @@ Given /^there is a project called "([^"]*)"$/ do |name|
   FactoryGirl.create(:project, :name => name)
 end
 
+Then /^I should not see "([^"]*)"$/ do |content|
+  assert !page.has_content?(content)
+end
+

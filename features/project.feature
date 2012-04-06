@@ -50,6 +50,6 @@ Feature: Creating Projects
         When I follow "New Project 3"
         And I follow "Delete"
         Then I should see "Project has been deleted"
-        
+        And I should not see "New Project 3"
 
     
