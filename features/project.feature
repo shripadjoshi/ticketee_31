@@ -5,6 +5,7 @@ Feature: Creating Projects
 
     Scenario: Creating a project
         Given I am on the home page
+        Then I should see "New Project"
         When I follow "New Project"
         Then I fill in "Name" with "New Project"
         And I press "Create Project"
