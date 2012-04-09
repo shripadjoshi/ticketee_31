@@ -27,6 +27,6 @@ Given /^there is a project called "([^"]*)"$/ do |name|
 end
 
 Then /^I should not see "([^"]*)"$/ do |content|
-  assert !page.has_content?(content)
+  assert page.has_no_content?(content)
 end
 
